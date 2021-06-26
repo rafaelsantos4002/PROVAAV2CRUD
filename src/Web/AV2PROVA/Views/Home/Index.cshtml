@@ -1,0 +1,42 @@
+﻿@model AV2PROVA.Models.VeiculoViewModel
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <span class="navbar-text">
+            Pagina Principal
+        </span>
+    </div>
+</nav>
+<div style="margin-top:30px;width:100%">
+    <h2>Faça Uma pesquisa por:</h2>
+    <div class="container">
+        <form asp-controller="Veiculo" asp-action="PesquisarModelo">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-3">
+                        <label asp-for="Modelo" class="control-label"></label>
+                        <input asp-for="Modelo" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Pesquisar" class="btn-secondary" />
+            </div>
+        </form>
+
+        <div style="margin-top:-155px;margin-left:320px;">
+            <form asp-controller="Veiculo" asp-action="PesquisarMarca">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-3">
+                            <label asp-for="Marca" class="control-label"></label>
+                            <input asp-for="Marca" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Pesquisar" class="btn-secondary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

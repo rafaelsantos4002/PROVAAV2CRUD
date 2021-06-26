@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Amazônia Veículos - Qualidade em Veiculos.</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="icon" type="imagem/png" href="/img/favicon.png" />
+
+</head>
+<body id="body-pd">
+
+    <div class="l-navbar" id="navbar">
+        <nav class="nav">
+            <div>
+                <div class="nav__brand">
+                    <ion-icon name="menu-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
+                    <a asp-controller="Home" asp-action="index" class="nav__logo"><img src="/img/logo.png"></a>
+                </div>
+                <div class="nav__list">
+                    <a asp-controller="Home" asp-action="Index" class="nav__link active">
+                        <ion-icon name="home-outline" class="nav__icon"></ion-icon>
+                        <span class="nav__nome">Inicio</span>
+                    </a>
+
+                    <a asp-controller="Veiculo" asp-action="Criar" class="nav__link">
+                        <ion-icon name="car" class="nav__icon"></ion-icon>
+                        <span class="nav__nome">Cadastrar Veiculo</span>
+                    </a>
+
+                    <a asp-controller="Veiculo" asp-action="Index" class="nav__link">
+                        <ion-icon name="receipt-outline" class="nav__icon"></ion-icon>
+                        <span class="nav__nome">Listar Veiculos</span>
+                    </a>
+
+                </div>
+            </div>
+
+            <a href="exitSession.html" class="nav__link">
+                <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
+                <span class="nav__nome">Sair</span>
+            </a>
+        </nav>
+    </div>
+
+    <div class="main_content align-items-center">
+        <div class="info">
+            @RenderBody()
+        </div>
+    </div>
+    <!-- FINAL DO CONTEUDO-->
+    <!-- Resesrvado Icones -->
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <script>
+        $(function () {
+            $(document).on('scroll', function () {
+                if ($(window).scrollTop() > 100) {
+                    $('.smoothscroll-top').addClass('show');
+                } else {
+                    $('.smoothscroll-top').removeClass('show');
+                }
+            });
+            $('.smoothscroll-top').on('click', scrollToTop);
+        });
+
+        function scrollToTop() {
+            verticalOffset = typeof (verticalOffset) != 'undefined' ? verticalOffset : 0;
+            element = $('body');
+            offset = element.offset();
+            offsetTop = offset.top;
+            $('html, body').animate({ scrollTop: offsetTop }, 600, 'linear').animate({ scrollTop: 25 }, 200).animate({ scrollTop: 0 }, 150).animate({ scrollTop: 0 }, 50);
+        }
+    </script>
+
+    <!-- Reservado JavaScript -->
+    <script src="/js/site.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <div class="smoothscroll-top">
+        <span class="scroll-top-inner">
+            <i class="fa fa-2x fa-arrow-circle-up"></i>
+        </span>
+    </div>
+
+    <div class="content">
+    </div>
+    <footer id="FooterAlmoxa">
+        <div class="navbar2 navbar-light bg-light">
+            <div class="container-fluid2">
+                <span class="navbar-text">
+                    © 2021 Copyright - Feitos por alunos da Uniron
+                </span>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

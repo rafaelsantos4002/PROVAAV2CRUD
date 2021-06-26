@@ -1,0 +1,44 @@
+﻿@model IEnumerable<AV2PROVA.Models.VeiculoViewModel>
+
+@{ ViewData["Title"] = "Pesquisar - Marca"; }
+
+<h1>Formulario de Marcas</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Modelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ano)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quilometragem)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Marca)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Modelo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ano)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Quilometragem)
+    </td>
+</tr>
+}
+    </tbody>
+</table>
